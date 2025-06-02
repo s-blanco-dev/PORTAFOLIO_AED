@@ -1,0 +1,72 @@
+PRECONDICIONES
+-----------------
+- ninguno de los conjuntos es nulo
+
+POSCONDICIONES
+-----------------
+
+- Retorna un nuevo conjunto que contiene:
+    - Todos los elementos del conjunto actual
+    - Todos los elementos del otro que no estaban en el conjunto actual
+- El conjunto no tiene duplicados
+
+union(otroConjunto: Conjunto) -> Conjunto
+COMIENZO
+    diccionario <- Nuevo Diccionario 
+    resultado <- Nuevo Conjunto
+    actualA <- this.getPrimero()
+    actualB <- otroConjunto.getPrimero()
+
+    MIENTRAS actualA != NULO HACER
+        diccionario.agregar(actualA.getDato())
+        resultado.insertar(actualA)
+        actualA <- actualA.getSiguiente()
+    FIN MIENTRAS
+
+    MIENTRAS actualB != NULO HACER
+        SI NO diccionario.contains(actualB.getDato()) ENTONCES
+            resultado.insertar(actualB)
+        FIN SI
+        actualB <- actualB.getSiguiente()
+    FIN MIENTRAS
+
+    RETORNAR resultado
+FIN
+
+------------------------------------------------
+------------------------------------------------
+
+PRECONDICIONES
+-----------------
+- ninguno de los conjuntos es nulo
+
+POSCONDICIONES
+-----------------
+
+- Retorna un nuevo conjunto que contiene solo los elementos que están en ambos conjuntos
+- El conjunto no tiene duplicados
+
+interseccion(otroConjunto: Conjunto) -> Conjunto
+COMIENZO
+    diccionario <- Nuevo Diccionario 
+    resultado <- Nuevo Conjunto
+    actualA <- this.getPrimero()
+    actualB <- otroConjunto.getPrimero()
+
+    MIENTRAS actualA != NULO HACER
+        diccionario.agregar(actualA.getDato())
+        actualA <- actualA.getSiguiente()
+    FIN MIENTRAS
+
+    MIENTRAS actualB != NULO HACER
+        SI diccionario.contains(actualB.getDato()) ENTONCES
+            resultado.insertar(actualB)
+        FIN SI
+        actualB <- actualB.getSiguiente()
+    FIN MIENTRAS
+
+    RETORNAR resultado
+FIN
+
+
+

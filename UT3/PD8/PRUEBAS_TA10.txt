@@ -1,0 +1,15 @@
+Ej 1.
+--------
+Emite 105 sucursales, lo mismo que en el TA10.
+
+Ej 2.
+--------
+SUCURSAL SIGUIENTE: Shenzhen
+
+Ej 3.
+--------
+D) NINGUNA DE LAS ULTERIORES INTERIORES ANTERIORES
+
+Ej 4.
+--------
+Montreal;_Caracas;_Tulsa;_Mobile;_Vancouver;_﻿Montreal;_Caracas;_Tulsa;_Mobile;_Vancouver;_

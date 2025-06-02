@@ -1,0 +1,31 @@
+ interseccion(A,B : Lista Enlazada) -> Lista Enlazada
+  Comienzo
+    Lista Enlazada C <- Nueva Lista Enlazada // O(1)
+    Nodo actual <- A.primero // O(1)
+
+    Mientras actual != nulo HACER // O(n)
+      Si B.buscar(actual.valor) != nulo ENTONCES // O(m)
+        C.insertar(acual.valor) // O(1)
+      Fin Si
+      actual = actual.siguiente // O(1)
+    Fin Mientras
+
+    Retornar C // O(1)
+  Fin
+
+  union(A,B : Lista Enlazada) -> Lista Enlazada
+  Comienzo
+    Lista Enlazada C <- copia de A // O(1)
+    Nodo actual <- B.primero // O(1)
+
+    Mientras actual != nulo HACER // O(n)
+      Si C.buscar(actual.valor) != nulo HACER // O(m)
+        C.insertar(actual.valor) // O(1)
+      Fin Si
+      actual = actual.siguiente // O(1)
+    Fin Mientras
+
+    Retornar C // O(1)
+  Fin
+
+

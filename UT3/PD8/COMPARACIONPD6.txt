@@ -1,0 +1,55 @@
+-----------------------------------
+COMPARACION DE IMPLEMENTACION
+-----------------------------------
+-----------------------------------
+
+
+agregarSucursal() y quitarSucursal()
+---------------------
+La lógica sigue siendo la misma: los métodos buscar() e insertar() se reemplazan por contains() y add() propios del ArrayList.
+
+- contains() y buscar() ambos son de orden O(n) porque deben iterar sobre toda la estructura hasta dar con el elemento.
+
+- En agregarSucursal(), el método add es O(1) porque se trata de insertar un nodo al final de un arreglo. En cuanto al TDA Lista, asumiendo que no hay una referencia al último, se debe iterar hasta el último nodo para poder realizar una operación de inserción --> ergo O(n).
+
+listarSucursales()
+---------------------
+El método imprimir() del TDA Lista se cambia por una iteración sobre el ArrayList de sucursales, que imprime por pantalla una línea en cada iteración.
+
+Ambos son de orden O(n), simplemente se itera sobre cada elemento para imprimirlo.
+
+cantidadDeSucursales() 
+-------------------------
+Sólo se reemplaza cantElementos() por size()
+
+--> Ambos O(1)
+
+isEmpty()
+------------
+Misma lógica, se cambia esVacia() por isEmpty() de ArrayList
+
+--> Ambos O(1)
+
+imprimirLista()
+-----------------
+Igual que listar sucursales, pero agrego separador ";_"
+
+cargarArchivo
+---------------
+Igual
+
+-----------------------------------
+COMPARACION DE CONSUMO DE MEMORIA
+-----------------------------------
+-----------------------------------
+
+La implementación con ArrayList consume menos memoria porque almacena los elementos en un arreglo contiguo, lo que significa que sólo se guardan los elementos sin el overhead de almacenar referencias a un proximo elemento. Mientras que el TDA Lista ocupa más espacio por cada elemento al guardar datos y referencias al siguiente nodo.
+
+Sin embargo, con un ArrayList puede desperdiciar memoria si el arreglo debe redimensionarse. 
+
+-----------------------------------
+COMPARACION DE TIEMPO DE EJECUCION 
+-----------------------------------
+-----------------------------------
+
+ArrayList es más rápido en operaciones de acceso por índice usando get(i) y búsqueda usando contains() por ser O(1) para acceso y O(n) para búsqueda. El TDA Lista tiene tiempos de O(n) para búsqueras e inserciones. El TDA Lista puede ser mejor para inserciones o eliminaciones en el medio de la lista (O(1) si ya se sabe el nodo), pero en esta implementacion se recorre desde el inicio (O(n)). Por esto ArrayList es más rápido en la mayoría de los casos.

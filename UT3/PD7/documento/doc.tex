@@ -1,0 +1,221 @@
+\documentclass[12pt,letterpaper, onecolumn]{exam}
+\usepackage{amsmath}
+\usepackage[T1]{fontenc}
+\usepackage{amssymb}
+\usepackage[a4paper, total={6.5in, 10in}]{geometry}
+\usepackage[spanish]{babel}
+% \chead{\hline} % Un-comment to draw line below header
+\thispagestyle{empty}   %For removing header/footer from page 1
+
+\begin{document}
+
+\begingroup  
+    \centering
+    \LARGE Algoritmos y Estructuras de Datos\\
+    \large Unidad Temática 3\\
+    \large Práctico Individual 7\\[0.5em]
+    \normalsize \today\\[0.5em]
+    \normalsize Santiago Blanco Canaparro\par
+    \normalsize Profesor: Sebastián Torres\par
+    \normalsize Grupo I2M2\par
+\endgroup
+\rule{\textwidth}{0.4pt}
+\pointsdroppedatright   %Self-explanatory
+\printanswers
+\renewcommand{\solutiontitle}{\noindent\textbf{$\rightarrow$}\enspace}   %Replace "Ans:" with starting keyword in solution box
+
+\begin{questions}
+
+    \question[] Ejercicio \#1\droppoints
+    
+    \begin{solution}
+      \textbf{Lenguaje natural}: \\
+    Se tienen los conjuntos ordenados A y B (Listas Enlazadas) y se debe realizar la operación UNION entre ambos resultando en un conjunto C.
+
+      \begin{verbatim}
+      Defino conjunto C vacío 
+      Creo dos referencias y las apunto al inicio de ambos conjuntos 
+
+      Mientras ambas referencias no sean nulas
+        Si el elemento de A es menor que el de B
+          Agregar el elemento de A al conjunto C
+          Avanzo al proximo elemento de A
+        Fin Si
+        Si el elemento de B es menor que el de A
+          Agregar el elemento de B al conjunto C
+          Avanzo al proximo elemento de B
+        Fin Si
+        Sino (si son iguales)
+          Agrego el elemento una sola vez (que no haya duplicados)
+          Avanzo al proximo elemento de ambos 
+        Fin Sino
+
+        Si un conjunto se terminó antes que el otro
+          Agrego los elementos restantes
+        Fin Si
+
+      Retornar cojunto C
+      \end{verbatim}
+      \textbf{Precondiciones}
+      \vspace{-4mm}
+      \begin{itemize}
+        \item Los conjuntos A y B que se reciben están ordenados
+      \vspace{-2mm}
+        \item Los conjuntos A y B que se reciben tienen elementos comparables 
+      \end{itemize}
+
+      \vspace{-3mm}
+
+      \textbf{Postcondiciones}
+      \vspace{-4mm}
+      \begin{itemize}
+        \item Se retorna una lista enlazada C
+      \vspace{-2mm}
+    \item La lista C contiene todos los elementos de A y B 
+      \vspace{-2mm}
+    \item La lista C no contiene elementos repetidos 
+      \end{itemize}
+
+Se tienen los conjuntos A y B (Listas Enlazadas) y se debe realizar la operación INTERSECCION entre ambos resultando en un conjunto C.
+ \begin{verbatim}
+   Defino conjunto C vacío 
+      Creo dos referencias y las apunto al inicio de ambos conjuntos 
+
+      Mientras ambas referencias no sean nulas
+        Si son iguales
+          Agrego el elemento que está en ambos
+          Avanzo al proximo elemento de ambos 
+        Fin Si
+        Si el elemento de A es menor que el de B
+          Avanzo al proximo elemento de A
+        Fin Si
+        Si el elemento de B es menor que el de A
+          Avanzo al proximo elemento de B
+        Fin Si
+        
+      Retornar conjunto C
+ \end{verbatim}
+\textbf{Precondiciones}
+      \vspace{-4mm}
+      \begin{itemize}
+        \item Los conjuntos A y B que se reciben están ordenados
+      \vspace{-2mm}
+        \item Los conjuntos A y B que se reciben tienen elementos comparables 
+      \end{itemize}
+
+      \vspace{-3mm}
+
+      \textbf{Postcondiciones}
+      \vspace{-4mm}
+      \begin{itemize}
+        \item Se retorna una lista enlazada C
+      \vspace{-2mm}
+    \item La lista C contiene todos los elementos x tal que $x \in C \iff x \in A \wedge x \in B $
+      \vspace{-2mm}
+    \item La lista C no contiene elementos repetidos 
+      \end{itemize}
+
+    \end{solution}
+
+    \begin{solution}
+  \textbf{Pseudocódigo} 
+
+
+\begin{verbatim}
+union(conjuntoB: Lista Enlazada) -> Lista Enlazada
+  COMIENZO
+    Lista conjuntoC <- Nueva lista // O(1)
+    
+    actualA <- primero // O(1)
+    actualB <- conjuntoB.primero // O(1)
+    
+    // Mientras ambos conjuntos tengan elementos
+    // O(n)
+    MIENTRAS (actualA != nulo Y actualB != nulo) HACER
+        comparacion <- comparar(actualA, actualB) // O(1)
+        
+        SI comparacion < 0 ENTONCES
+            resultado.insertar(actualA.valor, actualA.etiqueta)// O(1)
+            actualA <- actualA.siguiente // O(1)
+            
+        SINO SI comparacion > 0 ENTONCES
+            resultado.insertar(actualB.valor, actualB.etiqueta)// O(1)
+            actualB <- actualB.siguiente // O(1)
+            
+        SINO
+            resultado.insertar(actualA.valor, actualA.etiqueta)// O(1)
+            actualA <- actualA.siguiente // O(1)
+            actualB <- actualB.siguiente // O(1)
+        FIN SI
+    FIN MIENTRAS
+    
+    // AGREGA LOS ELEMENTOS RESTANTES
+
+    // O(n)
+    MIENTRAS actualA != nulo HACER
+        resultado.insertar(actualA.valor, actualA.etiqueta)
+        actualA <- actualA.siguiente
+    FIN MIENTRAS
+    
+    // O(n)
+    MIENTRAS actualB != nulo HACER
+        resultado.insertar(actualB.valor, actualA.etiqueta)
+        actualB <- actualB.siguiente
+    FIN MIENTRAS
+    
+    RETORNAR resultado
+  FIN 
+  \end{verbatim}
+    \textbf{Análisis del tiempo de ejecución} 
+
+    Nota: dentro del bucle Mientras se referencian dos métodos propios del TDA Lista
+    \begin{itemize}
+      \item insertar() -> Es de orden O(1) porque existe una referencia al último nodo en la lista.
+      \item comparar() -> Es de orden O(1) porque compara entre objetos comparables que tengan implementados el método compareTo().
+    \end{itemize}
+
+    \textbf{Total:} O(1) + O(1) + O(1) + [O(n) * [O(1)*8]] + O(n) + O(n) = $O(n)$
+
+    \newpage
+  \begin{verbatim}
+ interseccion(conjuntoB: Lista Enlazada) -> Lista Enlazada 
+  COMIENZO
+    Lista conjuntoC <- Nueva lista  // O(1) 
+    
+    actualA <- primero // O(1) 
+    actualB <- conjuntoB.primero // O(1) 
+    
+    // O(n)
+    MIENTRAS (actualA != nulo Y actualB != nulo) HACER
+        comparacion <- comparar(actualA, actualB)  // O(1)
+        
+        SI comparacion == 0 ENTONCES
+            conjuntoC.insertar(actualA.valor, actualA.etiqueta) // O(1) 
+            actualA <- actualA.siguiente  // O(1) 
+            actualB <- actualB.siguiente // O(1)
+        
+        SINO SI comparacion < 0 ENTONCES
+            actualA <- actualA.siguiente  // O(1) 
+        
+        SINO
+            actualB <- actualB.siguiente // O(1) 
+        FIN SI
+    FIN MIENTRAS
+
+    RETORNAR conjuntoC // O(1)
+FIN 
+  \end{verbatim}
+    \textbf{Análisis del tiempo de ejecución} 
+
+Nota: dentro del bucle Mientras se referencian dos métodos propios del TDA Lista
+    \begin{itemize}
+      \item comparar() -> Es de orden O(1) porque compara entre objetos comparables que tengan implementados el método compareTo().
+      \item insertar() -> Es de orden O(1) porque existe una referencia al último nodo en la lista.
+    \end{itemize}
+
+    \textbf{Total:} O(1) + O(1) + O(1) + [O(n) * [O(1)*6]] = $O(n)$
+        \end{solution}
+\end{questions}
+
+\textbf{Nota:} La idea de los algoritmos la tomé del libro 'Estructuras de Datos y Algoritmos' de Alfred Aho. 
+\end{document}
