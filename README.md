@@ -23,6 +23,7 @@ Este portafolio es más que un compendio de tareas y reflexiones; es una exposic
 Cada carpeta de unidad incluye:
 - 📓 Reflexión personal sobre los contenidos aprendidos.
 - 📂 Tareas prácticas y ejercicios resueltos.
+- :page_facing_up:  Resumenes y material de estudio propio
 
 ## 📈 Evaluación del Aprendizaje
 
