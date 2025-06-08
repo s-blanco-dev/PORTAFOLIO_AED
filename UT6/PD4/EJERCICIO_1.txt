@@ -1,0 +1,5 @@
+EJERCICIO #1
+A)
+La clase más apropiada es HashMap, dado lo siguiente:
+Es importante poder obtener e insertar valores en la estructura de manera rápida, en este sentido HashMap permite operaciones O(1) en get() y put()
+Se debe asociar cada palabra con la cantidad de veces que aparece. Es decir que se almacena en clave-valor
