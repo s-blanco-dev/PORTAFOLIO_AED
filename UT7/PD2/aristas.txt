@@ -1,0 +1,12 @@
+Artigas,Rocha,400
+Canelones,Artigas,500
+Canelones,Colonia,200
+Canelones,Durazno,170
+Canelones,PuntadelEste,90
+Colonia,Montevideo,180
+Florida,Durazno,60
+Montevideo,Artigas,700
+Montevideo,Canelones,30
+Montevideo,PuntadelEste,130
+PuntadelEste,Rocha,90
+Rocha,Montevideo,270

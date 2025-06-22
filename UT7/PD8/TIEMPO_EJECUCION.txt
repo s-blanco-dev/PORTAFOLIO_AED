@@ -1,0 +1,4 @@
+Este sublime algoritmo realiza una BPF y visita todas las aristas exactamente una vez. Clasificar cada arista se hace en tiempo constante O(n).
+- ORDEN: O(n + m), donde n es la cant. de vertices y m la cant. de aristas
+
+Nota: Tuve que modificar la clase TVertice para agregar los atributos de tiempo de descubrimiento y de finalizacion.

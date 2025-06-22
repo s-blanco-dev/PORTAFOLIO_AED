@@ -1,0 +1,6 @@
+1. El costo de volar de Montevideo a Rio de Janeiro es:
+    b. 3780.
+2. El costo de volar de Montevideo a Curitiba es:
+    a. 2580
+3. Los servicios de mantenimiento se instalan en:
+    d. Porto Alegre, dado que es el centro del grafo.
