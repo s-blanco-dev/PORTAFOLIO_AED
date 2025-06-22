@@ -6,11 +6,11 @@ Bienvenido a mi Portafolios de Aprendizaje de **Algoritmos y Estructuras de Dato
 
 Estimado profesor:
 
-Si ha llegado hasta este lugar, es muy probable que mi desempeño en su curso haya superado al menos una fracción de sus expectativas. Le ruego, entonces, escuche los lamentos digitales que aquí le presento y tenga a bien considerar con misericordia el esfuerzo de este humilde servidor suyo.
+Si ha llegado hasta este lugar, es muy probable que mi desempeño en su curso haya caído en lo misérrimo. Le ruego, entonces, escuche los lamentos que aquí le presento y tenga a bien considerar estos trabajos por los cuales he llegado a derramar mi sangre.
 
-Este portafolio es más que un compendio de tareas y reflexiones; es una exposición del camino de un peregrino de los algoritmos y las estructuras de datos. Reconociendo que el curso no fue fácil, en las profundidades de mi alma habita una sincera intención: demostrar que, efectivamente, disfruto de los algoritmos bien diseñados, de las estructuras elegantes, y que reconozco su centralidad en el mundo de la computación.
+Este portafolio es más que un compendio de tareas y reflexiones; Es el resultado de una sufrida peregrinación hasta el centro de un grafo (vértice con menor excentricidad).
 
-## 🎯 Objetivos del Portafolio
+## 🎯 Objetivos del Portafolio (De acuerdo con las pautas dadas)
 
 - Documentar el proceso de aprendizaje en cada unidad temática.
 - Reflexionar sobre los avances, dificultades y logros.
@@ -36,7 +36,6 @@ Reflexión sobre la importancia de los conceptos adquiridos: [Relevancia.md](./R
 ## 📎 Anexos
 
 Algúnos proyectos personales en donde apliqué directamente los conceptos adquiridos en la materia:
-- Autocompletado para una Shell (Escrito en C)
 - Algo se me va a ocurrir
 
 ---
